@@ -19,7 +19,7 @@ const { default_language, top_header } = config.settings;
 const { email, phone } = config.params;
 const { pathname } = Astro.url;
 const { get_quote, connect_with_us, call_now } = await getTranslations(
-  lang as keyof ContentEntryMap
+  lang as keyof ContentEntryMap,
 );
 
 const disabledLanguages = config.settings.disable_languages as string[];
@@ -116,7 +116,7 @@ if (disabledLanguages.includes(lang)) {
                     class={`items-center ${
                       menu.children
                         ?.map(({ url }: { url: string }) =>
-                          slugSelector(url, lang)
+                          slugSelector(url, lang),
                         )
                         .includes(pathname)
                         ? "active"
@@ -146,7 +146,7 @@ if (disabledLanguages.includes(lang)) {
                             {child.name}
                           </a>
                         </li>
-                      )
+                      ),
                     )}
                   </ul>
                 </li>
@@ -163,7 +163,7 @@ if (disabledLanguages.includes(lang)) {
                 </li>
               )}
             </>
-          )
+          ),
         )
       }
       {/* Navigation button */}
@@ -203,10 +203,10 @@ if (disabledLanguages.includes(lang)) {
   document.addEventListener("astro:page-load", () => {
     // Navbar Toggler
     const navbarToggler = document.querySelector(
-      ".navbar-toggler"
+      ".navbar-toggler",
     ) as HTMLElement | null;
     const navbarMenu = document.querySelector(
-      ".navbar-nav"
+      ".navbar-nav",
     ) as HTMLElement | null;
 
     navbarToggler?.addEventListener("click", () => {
@@ -232,7 +232,7 @@ if (disabledLanguages.includes(lang)) {
 
   // Dropdown Menu Toggler For Mobile
   const dropdownMenuToggler = document.querySelectorAll(
-    ".nav-dropdown > .nav-link"
+    ".nav-dropdown > .nav-link",
   ) as NodeListOf<HTMLElement>;
 
   dropdownMenuToggler.forEach((toggler) => {

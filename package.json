@@ -1,8 +1,9 @@
 {
-  "name": "bexer-astro",
+  "name": "planbuildfinance-website",
   "version": "2.1.0",
-  "description": "Astro Business Theme",
-  "author": "Themefisher",
+  "description": "Public Website for Plan Build Finance Inc.",
+  "author": "Alex Leistra, Themefisher",
+  "homepage": "https://www.planbuildfinance.com",
   "license": "UNLICENSED",
   "packageManager": "yarn@1.22.22",
   "type": "commonjs",

@@ -20,7 +20,11 @@ if (menu) {
 
 const { copyright, address, phone, email, footer_content, copyright_menu } =
   config.params;
-const { services, contact_info, follow_us_on } = // subscribe_newsletter
+const {
+  services,
+  contact_info,
+  follow_us_on,
+} = // subscribe_newsletter
   await getTranslations(lang as keyof ContentEntryMap);
 ---
 
@@ -144,7 +148,7 @@ const { services, contact_info, follow_us_on } = // subscribe_newsletter
                         {menu.name}
                       </a>
                     </li>
-                  )
+                  ),
                 )}
               </ul>
             </div>

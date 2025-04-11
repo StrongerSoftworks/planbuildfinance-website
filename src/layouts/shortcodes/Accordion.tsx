@@ -15,8 +15,9 @@ const Accordion = ({
   return (
     <div className={`accordion ${show && "active"} ${className}`}>
       <button className="accordion-header" onClick={() => setShow(!show)}>
-
-        <span className="accordion-icon">{show ? <FaMinus /> : <FaPlus />}</span>
+        <span className="accordion-icon">
+          {show ? <FaMinus /> : <FaPlus />}
+        </span>
 
         {title}
       </button>

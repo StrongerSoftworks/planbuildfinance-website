@@ -15,7 +15,7 @@ export async function getStaticPaths() {
     supportedLang.map(async (lang) => {
       const projects = await getSinglePage(
         "projects",
-        lang as keyof ContentEntryMap
+        lang as keyof ContentEntryMap,
       );
 
       return projects.map((project) => ({
@@ -27,7 +27,7 @@ export async function getStaticPaths() {
           project,
         },
       }));
-    })
+    }),
   );
   return paths.flat();
 }

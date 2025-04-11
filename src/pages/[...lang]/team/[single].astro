@@ -12,7 +12,7 @@ export async function getStaticPaths() {
     supportedLang.map(async (lang) => {
       const members = await getSinglePage(
         "team",
-        lang as keyof ContentEntryMap
+        lang as keyof ContentEntryMap,
       );
 
       return members.map((member) => ({
@@ -24,7 +24,7 @@ export async function getStaticPaths() {
           member,
         },
       }));
-    })
+    }),
   );
   return paths.flat();
 }

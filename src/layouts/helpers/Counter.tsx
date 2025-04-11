@@ -28,7 +28,7 @@ const Counter = ({
   useEffect(() => {
     if (inView) {
       setStart(initialStart);
-      setEnd(initialEnd); 
+      setEnd(initialEnd);
     } else {
       setStart(initialEnd);
       setEnd(initialStart);

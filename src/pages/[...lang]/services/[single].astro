@@ -19,7 +19,7 @@ export async function getStaticPaths() {
     supportedLang.map(async (lang) => {
       const services = await getSinglePage(
         "services",
-        lang as keyof ContentEntryMap
+        lang as keyof ContentEntryMap,
       );
 
       return services.map((service) => ({
@@ -31,7 +31,7 @@ export async function getStaticPaths() {
           service,
         },
       }));
-    })
+    }),
   );
   return paths.flat();
 }
@@ -43,7 +43,7 @@ const { Content } = await render(service);
 const land = getLangFromUrl(Astro.url);
 const allServices = await getSinglePage(
   "services",
-  land as keyof ContentEntryMap
+  land as keyof ContentEntryMap,
 );
 
 const serviceSlugs = allServices.map((service) => {
