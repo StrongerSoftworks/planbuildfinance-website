@@ -2,17 +2,17 @@
   "colors": {
     "default": {
       "theme_color": {
-        "primary": "#86c33a",
-        "secondary": "#252d39",
+        "primary": "#d2bb9b",
+        "secondary": "#383838",
         "body": "#fff",
-        "border": "#e7e7e7",
-        "light": "#f6f6f6",
-        "dark": ""
+        "border": "#7a96b8",
+        "light": "#fefcfd",
+        "dark": "#383838"
       },
       "text_color": {
-        "text": "#818385",
-        "text-dark": "#172231",
-        "text-light": "#ddd"
+        "text": "#383838",
+        "text-dark": "#383838",
+        "text-light": "#fefcfd"
       }
     }
   },

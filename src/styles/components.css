@@ -303,7 +303,7 @@
 /* icon animation */
 .icon-bg {
   position: relative;
-  background-color: rgb(134 195 58 / 0.2);
+  background-color: rgb(122 150 184 / 0.2);
   display: inline-block;
   height: 100px;
   width: 100px;
@@ -317,7 +317,7 @@
     width: 100%;
     top: 0;
     left: 5px;
-    background: rgb(134 195 58 / 0.05);
+    background: rgb(122 150 184 / 0.05);
     border-radius: 130px 120px 160px 130px;
   }
 
@@ -445,7 +445,7 @@
 
 .hover-icon {
   @apply absolute left-0 right-0 bottom-0;
-  background-color: rgba(134, 195, 58, 0.9);
+  background-color: rgba(210, 187, 155, 0.9);
   transition: 0.2s ease;
   transform: scale(0.8);
   z-index: 3;
@@ -480,7 +480,7 @@
 
 .hover-overlay {
   @apply absolute top-0 left-0 text-center w-full h-full opacity-0;
-  background-color: rgba(134, 195, 58, 0.9);
+  background-color: rgba(210, 187, 155, 0.9);
   transition: 0.4s ease;
 
   a {
