@@ -1,0 +1,10 @@
+---
+const { key } = Astro.props;
+---
+
+<script async src=`https://www.googletagmanager.com/gtag/js?id=${key}`></script>
+<script>
+    import { gtag } from "@/scripts/gtm";
+    gtag("js", new Date());
+    gtag("config", "G-5J9C0JG3DR");
+</script>

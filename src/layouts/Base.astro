@@ -9,6 +9,8 @@ import Header from "@/partials/Header.astro";
 import "@/styles/main.css";
 import { AstroFont } from "astro-font";
 import { ClientRouter } from "astro:transitions";
+import Ahrefs from "@/components/Ahrefs.astro";
+import GTM from "@/components/GTM.astro";
 
 // font families
 const pf = theme.fonts.font_family.primary;
@@ -47,6 +49,9 @@ const language = lang || getLangFromUrl(Astro.url);
 <!doctype html>
 <html lang={lang}>
   <head>
+    <GTM key="G-5J9C0JG3DR" />
+    <Ahrefs key="mLf+KOE/LX9Pvg3rt9GpBg" />
+
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
     <!-- theme meta -->
