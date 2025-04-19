@@ -37,10 +37,13 @@ const { feature } = Astro.props;
                       class="text-h5 mb-2"
                       set:html={markdownify(item.name)}
                     />
-                    <p
-                      set:html={markdownify(item.content)}
-                      class="text-balance"
-                    />
+                    {item.content.length > 0 && (
+                      <p
+                        set:html={markdownify(item.content)}
+                        class="text-balance"
+                      />
+                    )}
+                    
                   </div>
                 </li>
               ),

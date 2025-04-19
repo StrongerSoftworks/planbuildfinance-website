@@ -8,7 +8,6 @@ const homepageCollection = defineCollection({
       enable: z.boolean().default(true),
       slider_item: z.array(
         z.object({
-          subtitle: z.string(),
           title: z.string(),
           content: z.string(),
           bg_image: z.string(),

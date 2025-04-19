@@ -4,9 +4,8 @@ hero_slider:
   enable: true
   slider_item:
     # slider item
-    - subtitle: "We are here to"
-      title: "Planning Business"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    - title: "Plan Build Finance"
+      content: "We provide all of the necessary tools to complete your mortgage, design and construction projects. Our services are strategically aligned to leverage your most valuable assets providing structured wealth growth"
       bg_image: "/images/slider/banner-1.jpg"
       button:
         enable: true
@@ -14,9 +13,8 @@ hero_slider:
         link: "/about"
 
     # slider item
-    - subtitle: "We are here to"
-      title: "Planning Business"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    - title: "Mortgages"
+      content: "Mortgages, refinancing, debt consolidation, switches, home equity lines of credit, including residential and commercial lending."
       bg_image: "/images/slider/banner-2.jpg"
       button:
         enable: true
@@ -24,9 +22,8 @@ hero_slider:
         link: "/about"
 
     # slider item
-    - subtitle: "We are here to"
-      title: "Planning Business"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    - title: "Design"
+      content: "Decks, home remodels, conversions, open-concept, complete renovations, new builds, backyard homes, duplexes, tri-plexes and multi-family."
       bg_image: "/images/slider/banner-3.jpg"
       button:
         enable: true
@@ -34,9 +31,26 @@ hero_slider:
         link: "/about"
 
     # slider item
-    - subtitle: "We are here to"
-      title: "Planning Business"
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    - title: "Scheduling"
+      content: "Material and contractor analysis, sequencing work activities, setting realistic timelines."
+      bg_image: "/images/slider/banner-4.jpg"
+      button:
+        enable: true
+        label: "more details"
+        link: "/about"
+
+    # slider item
+    - title: "Planning & Permitting"
+      content: "Zoning & bylaw review, technical building permit review, turn-key permitting services."
+      bg_image: "/images/slider/banner-4.jpg"
+      button:
+        enable: true
+        label: "more details"
+        link: "/about"
+
+    # slider item
+    - title: "Budget and Cost Control"
+      content: "Budgeting, contractor pricing, material pricing, contract review, cash flow analysis."
       bg_image: "/images/slider/banner-4.jpg"
       button:
         enable: true
@@ -49,28 +63,23 @@ banner_feature:
   # Max use 4 item
   feature_item:
     # banner feature item loop
-    - name: "Business Solution"
-      icon: "FaGem"
-      content: "Lorem ipsum dolor sit amet constur adipelit sed."
+    - name: "Professional Quantity Surveyor"
+      icon: "PiSealFill"
+      content: "Member of the Canadian Institute of Quantity Surveyors."
 
     # banner feature item loop
-    - name: "Market Research"
-      icon: "FaChartBar"
-      content: "Lorem ipsum dolor sit amet constur adipelit sed."
+    - name: "Gold Seal Certified"
+      icon: "PiSealFill"
+      content: "Gold Seal Certified with the Canadian Construction Association."
 
     # banner feature item loop
-    - name: "Business Strategy"
-      icon: "FaLightbulb"
-      content: "Lorem ipsum dolor sit amet constur adipelit sed."
-
-    # banner feature item loop
-    - name: "Speed Optimization"
-      icon: "FaGear"
-      content: "Lorem ipsum dolor sit amet constur adipelit sed."
+    - name: "Licensed and Insured"
+      icon: "PiSealFill"
+      content: "Licensed and insured to provide design and mortgage services across Ontario"
 
 ######### funfacts ########
 funfacts:
-  enable: true
+  enable: false
   funfacts_item:
     # fanfacts item loop
     - name: "project done"
@@ -96,17 +105,27 @@ funfacts:
 feature:
   enable: true
   subtitle: "Why Choose Us"
-  title: "Why They Choose Bexar"
+  title: "Why Choose Plan Build Finance Inc."
   image: "/images/feature/feature.png"
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius tempor incididunt ut labore."
+  content: "Plan Build Finance Inc. is unique in the fact that we are licensed and insured to provide both design and financial services making us exceptionally well suited to maximizing your returns whether you are performing a straight forward home purchase or completing a complex renovation project or new build project. Our company is founded on providing an excellent customer experience and a suite of integrated services leading to turn-key solutions for your mortgage and design needs. <br /><br />We provide a hands-on personal approach. Our services are based on our own experience planning, designing and building our own real estate investment portfolio across Southwestern Ontario."
   feature_item:
     # feature item loop
-    - name: "Creative Design"
-      icon: FaSnowflake
-      content: "Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia."
+    - name: "Excellent Customer Service"
+      icon: FaHeadset
+      content: ""
 
     # feature item loop
-    - name: "Pixel Perfect Coding"
-      icon: FaCode
-      content: "Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia."
+    - name: "Integrated Services"
+      icon: FaPuzzlePiece
+      content: ""
+
+    # feature item loop
+    - name: "Years of Experience"
+      icon: FaBusinessTime
+      content: ""
+
+    # feature item loop
+    - name: "Case Studies Demonstrating Success"
+      icon: FaTimeline
+      content: ""
 ---
