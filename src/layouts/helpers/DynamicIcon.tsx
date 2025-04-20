@@ -3,10 +3,11 @@ import type { IconType } from "react-icons";
 import * as FaIcons from "react-icons/fa6";
 import * as PiIcons from "react-icons/pi";
 // import * as AiIcons from "react-icons/ai";
-// import * as BsIcons from "react-icons/bs";
+import * as BsIcons from "react-icons/bs";
 // import * as FiIcons from "react-icons/fi";
 // import * as Io5Icons from "react-icons/io5";
 // import * as RiIcons from "react-icons/ri";
+import * as MdIcons from "react-icons/md";
 // import * as TbIcons from "react-icons/tb";
 // import * as TfiIcons from "react-icons/tfi";
 
@@ -20,8 +21,10 @@ interface IDynamicIcon extends React.SVGProps<SVGSVGElement> {
 }
 
 const iconLibraries: { [key: string]: IconMap } = {
+  bs: BsIcons,
   fa: FaIcons,
   pi: PiIcons,
+  md: MdIcons,
 };
 
 const DynamicIcon: FC<IDynamicIcon> = ({ icon, ...props }) => {

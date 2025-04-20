@@ -6,8 +6,8 @@
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
-    "logo_width": "150",
-    "logo_height": "42",
+    "logo_width": "87",
+    "logo_height": "54",
     "logo_text": "Plan Build Finance Inc."
   },
 
@@ -24,13 +24,13 @@
 
   "params": {
     "contact_form_action": "#",
-    "address": "123 Main Street, New York, NY 10001",
-    "phone": "123-456-7890",
-    "email": "info@bexar.com",
-    "footer_content": "Lorem ipsum dolor amet consectetur adipisicing elit sed eiusm tempor incididunt ut labore dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamaboris nisi ut aliquip.exea commodo consequat. Duis aute irure dolor in reprehenderit.",
+    "address": "",
+    "phone": "519-280-2770",
+    "email": "ben@planbuildfinance.com",
+    "footer_content": "",
     "copyright": "&copy; Plan Build Finance Inc.",
     "copyright_menu": {
-      "enable": true,
+      "enable": false,
       "menu_items": [
         { "name": "Privacy Policy", "url": "/privacy-policy" },
         { "name": "Terms of Service", "url": "/terms" }
@@ -45,8 +45,8 @@
   },
 
   "metadata": {
-    "meta_author": "themefisher",
-    "meta_image": "/images/og-image.png",
-    "meta_description": "Bexer is a SAAS theme powered by Astro"
+    "meta_author": "ben@planbuildfinance.com",
+    "meta_image": "/images/og-image.jpg",
+    "meta_description": "Plan Build Finance Inc."
   }
 }

@@ -1,5 +1,5 @@
 ---
-enable: true
+enable: false
 title: "What Clients Are Say?"
 subtitle: "Testimonials"
 

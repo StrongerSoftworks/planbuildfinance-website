@@ -2,22 +2,31 @@
   "main": [
     { "name": "Home", "url": "/" },
     { "name": "About", "url": "/about" },
-    { "name": "Services", "url": "/services",
+    {
+      "name": "Services",
+      "url": "/services",
       "hasChildren": true,
       "children": [
+        { "name": "All Services", "url": "/services" },
         { "name": "Mortgages", "url": "/services/mortgages" },
         { "name": "Design", "url": "/services/design" },
         { "name": "Scheduling", "url": "/services/scheduling" },
-        { "name": "Planning & Permitting", "url": "/services/planning-and-permitting" },
-        { "name": "Budget and Cost Control", "url": "/services/budget-and-cost-control" }
+        {
+          "name": "Planning & Permitting",
+          "url": "/services/planning-and-permitting"
+        },
+        {
+          "name": "Budget and Cost Control",
+          "url": "/services/budget-cost-control"
+        }
       ]
     },
     { "name": "Projects", "url": "/projects" },
     { "name": "Contact", "url": "/contact" }
   ],
   "footer": [
-    { "name": "About Us", "url": "/about" },
-    { "name": "Contact Us", "url": "/contact" },
+    { "name": "About", "url": "/about" },
+    { "name": "Compliance", "url": "/compliance" },
     { "name": "Services", "url": "/services" },
     { "name": "Projects", "url": "/projects" }
   ]

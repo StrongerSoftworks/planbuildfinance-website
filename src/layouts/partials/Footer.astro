@@ -21,7 +21,7 @@ if (menu) {
 const { copyright, address, phone, email, footer_content, copyright_menu } =
   config.params;
 const {
-  services,
+  about_us,
   contact_info,
   follow_us_on,
 } = // subscribe_newsletter
@@ -32,66 +32,117 @@ const {
   <!-- main footer -->
   <div class="section bg-secondary">
     <div class="container">
-      <div class="row justify-between">
-        <!-- footer content -->
-        <div class="md:col-5 mb-5 md:mb-0">
-          <Logo src="/images/logo-alt.png" />
-          <p
-            class="text-light/75 mt-6 mb-5"
+      <!-- <div class="row justify-between items-baseline">
+        <div class="col-12 flex justify-center items-center">
+          <ImageMod
+          src="/images/logo-alt.png"
+          class={`inline-block`}
+          width={480 * 2}
+          height={260 * 2}
+          alt={"Plan Build Finance Inc. Logo"}
+          style={{
+            height: 260 + "px",
+            width: 480 + "px",
+          }}
+          format="webp"
+          loading={"eager"}
+        />
+        </div>
+      </div> -->
+      <div class="row justify-between items-baseline">
+
+        <div class="col-12 md:col-6 xl:col-3 mb-5 md:mb-0">
+          <!-- <Logo src="/images/logo.png" /> -->
+          <!-- <p
+            class="text-light/75 mb-5"
             set:html={markdownify(footer_content)}
-          />
+          /> -->
           <!-- social links -->
-          <h4 class="text-white mb-6 mt-12 text-h5 font-semibold">
+          <h4 class="text-white mb-6 text-h5 font-semibold">
             {follow_us_on}
           </h4>
           <Social source={social.main} className="social-icon-alt" />
         </div>
 
-        <div class="md:col-6">
-          <div class="row">
-            <!-- service list -->
-            <div class="col-6 mt-5">
-              <h4 class="text-white mb-4 text-h5 font-semibold">{services}</h4>
-              <ul class="list-styled">
-                {
-                  footer.map((menu: any) => (
-                    <li class="mb-3 text-light/75">
-                      <a
-                        class=" block"
-                        href={`${slugSelector(menu.url, lang)}`}
-                        set:html={markdownify(menu.name)}
-                      />
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
+        <!-- licenses -->
+        <div class="col-12 md:col-6 xl:col-3">
+          <h4 class="text-white mb-4 text-h5 font-semibold">
+            Certifications and Licenses 
+          </h4>
+          <ul>
+            <li class="text-light/75 mb-3">Mortgage Agent Level 1 | License M25000323</li>
+            <li class="text-light/75 mb-3">B.C.I.N. License #39688</li>
+            <li class="text-light/75 mb-3">Professional Quantity Surveyor</li>
+            <li class="text-light/75 mb-3">Member of the Canadian Institute of Quantity Surveyors</li>
+            <li class="text-light/75 mb-3">Gold Seal Certified with the Canadian Construction Association</li>
+            <li class="text-light/75 mb-3"></li>
+          </ul>
+        </div>
 
-            <!-- contact info -->
-            <div class="col-6 mt-5">
-              <h4 class="text-white mb-4 text-h5 font-semibold">
-                {contact_info}
-              </h4>
-              <ul>
-                <li class="text-light/75 mb-3">
+        <!-- service list -->
+        <div class="col-12 md:col-6 xl:col-3 mt-5">
+          <h4 class="text-white mb-4 text-h5 font-semibold">{about_us}</h4>
+          <ul class="list-styled">
+            {
+              footer.map((menu: any) => (
+                <li class="mb-3 text-light/75">
                   <a
-                    target="_blank"
-                    href={`https://www.google.com/maps?q=${encodeURIComponent(address)}`}
-                    set:html={markdownify(address)}
+                    class=" block"
+                    href={`${slugSelector(menu.url, lang)}`}
+                    set:html={markdownify(menu.name)}
                   />
                 </li>
-                <li class="text-light/75 mb-3">
-                  <a href={`tel:${phone}`} set:html={markdownify(phone)} />
-                </li>
-                <li class="text-light/75 mb-3">
-                  <a href={`mailto:${email}`} set:html={markdownify(email)} />
-                </li>
-              </ul>
-            </div>
-          </div>
+              ))
+            }
+          </ul>
+        </div>
 
-          <!-- newsletter -->
-          <!-- <div class="col-12">
+        <!-- contact info -->
+        <div class="col-12 md:col-6 xl:col-3 mt-5">
+          <h4 class="text-white mb-4 text-h5 font-semibold">
+            {contact_info}
+          </h4>
+          <ul>
+            <li class="text-light/75 mb-3">
+              <a
+                target="_blank"
+                href={`https://www.google.com/maps?q=${encodeURIComponent(address)}`}
+                set:html={markdownify(address)}
+              />
+            </li>
+            <li class="text-light/75 mb-3">
+              <a href={`tel:${phone}`} set:html={markdownify(phone)} />
+            </li>
+            <li class="text-light/75 mb-3">
+              <a href={`mailto:${email}`} set:html={markdownify(email)} />
+            </li>
+          </ul>
+        </div>
+
+        <!-- Indi Mortgage info -->
+        <!-- <div class="col-12 md:col-6 xl:col-3 mt-5">
+            <h4 class="text-white mb-4 text-h5 font-semibold">
+              Home Office
+            </h4>
+            <ul>
+              <li class="text-light/75 mb-3">
+                <a
+                  target="_blank"
+                  href={`https://www.google.com/maps?q=${encodeURIComponent("223 14 Street NW, Calgary, AB T2N 1Z6")}`}
+                  set:html="223 14 Street NW, Calgary, AB T2N 1Z6"
+                />
+              </li>
+              <li class="text-light/75 mb-3">
+                <a href={`tel:800.517.8670`} set:html="800.517.8670" />
+              </li>
+              <li class="text-light/75 mb-3">
+                <a href={`mailto:info@indimortgage.ca`} set:html="info@indimortgage.ca" />
+              </li>
+            </ul>
+          </div> -->
+
+        <!-- newsletter -->
+        <!-- <div class="col-12">
             <h4 class="text-white mb-6 mt-12 text-h5 font-semibold">
               {subscribe_newsletter}
             </h4>
@@ -110,7 +161,7 @@ const {
               </div>
             </form>
           </div> -->
-        </div>
+
       </div>
     </div>
   </div>

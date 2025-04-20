@@ -1,8 +1,8 @@
 ---
-enable: true
+enable: false
 title: "Bexar give the smart solution for your business"
 button:
   enable: true
-  label: "get an quote"
+  label: "get a quote"
   link: "/contact"
 ---

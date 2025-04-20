@@ -7,7 +7,7 @@
 }
 
 .btn-primary {
-  @apply border-primary bg-primary text-white px-7 py-3 rounded-full transition duration-200 ease-in;
+  @apply border-primary bg-primary text-dark px-7 py-3 rounded-full transition duration-200 ease-in;
   position: relative; /* Needed for the ripple effect */
   overflow: hidden; /* Hide overflow for ripple effect */
 }
@@ -15,11 +15,12 @@
 .btn-primary:hover {
   @apply scale-95;
   box-shadow: 0 0 20px rgba(210, 187, 155, 0.9);
+  color: var(--secondary-color);
   animation: glow 1.5s infinite ease-in-out;
 }
 
 .btn-outline-primary {
-  @apply border-2 border-dark text-text-dark hover:bg-primary bg-transparent hover:border-primary hover:text-white lg:px-6 lg:py-4 rounded-full;
+  @apply border-2 border-dark text-text-dark hover:bg-primary bg-transparent hover:border-primary hover:text-dark lg:px-6 lg:py-4 rounded-full;
 }
 
 .btn-subscribe {

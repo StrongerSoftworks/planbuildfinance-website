@@ -9,6 +9,7 @@ const homepageCollection = defineCollection({
       slider_item: z.array(
         z.object({
           title: z.string(),
+          subtitle: z.string(),
           content: z.string(),
           bg_image: z.string(),
           button: z.object({
@@ -26,6 +27,7 @@ const homepageCollection = defineCollection({
           name: z.string(),
           icon: z.string(),
           content: z.string(),
+          link: z.string(),
         }),
       ),
     }),
@@ -43,7 +45,7 @@ const homepageCollection = defineCollection({
       enable: z.boolean().default(true),
       subtitle: z.string(),
       title: z.string(),
-      image: z.string(),
+      // image: z.string(),
       content: z.string(),
       feature_item: z.array(
         z.object({

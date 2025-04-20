@@ -9,7 +9,7 @@ const { feature } = Astro.props;
 <section class="section">
   <div class="container">
     <div class="row items-center justify-center">
-      <div class="lg:col-6 lg:order-1 order-2">
+      <div class="lg:col-10 lg:order-1 order-2">
         <span class="section-title-border"></span>
         <p class="text-h5" set:html={markdownify(feature.subtitle)} />
         <h2
@@ -19,11 +19,11 @@ const { feature } = Astro.props;
         <p class="mb-5 text-balance" set:html={markdownify(feature.content)} />
 
         <!-- feature item -->
-        <ul class="list-none">
+        <ul class="list-none flex flex-row flex-wrap justify-between">
           {
             feature?.feature_item.map(
               (item: { name: string; content: string; icon: string }) => (
-                <li class="flex items-center mb-8 last:mb-0">
+                <li class="basis-full lg:basis-1/2 flex items-center p-2 mb-4 last:mb-0">
                   <div class="text-center mr-8">
                     <div class="icon-bg water-wave flex items-center justify-center">
                       <DynamicIcon
@@ -51,7 +51,7 @@ const { feature } = Astro.props;
           }
         </ul>
       </div>
-      <div class="lg:col-6 lg:pe-0 lg:order-2 order-1 mb-10 lg:mb-0">
+      <!-- <div class="lg:col-6 lg:pe-0 lg:order-2 order-1 mb-10 lg:mb-0">
         <div class="feature-img-bg box-shadow">
           <ImageMod
             width={1000}
@@ -62,7 +62,7 @@ const { feature } = Astro.props;
             format="webp"
           />
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>

@@ -5,7 +5,7 @@ import { markdownify } from "@/lib/utils/textConverter";
 const { callToAction } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 ---
-
+{callToAction?.enabled && (
 <section
   class="section overlay-secondary bg-fixed bg-[url('/images/backgrounds/cta-lg.jpg')]"
 >
@@ -29,3 +29,4 @@ const lang = getLangFromUrl(Astro.url);
     </div>
   </div>
 </section>
+)}
