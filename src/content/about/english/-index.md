@@ -42,8 +42,8 @@ about_section:
     <br /><br />
     Ben takes a relaxed common-sense approach to all of his projects. When he isn’t focused mentally on how to construct and deconstruct a project he can usually be found on long walks with his partner Katie, hiking in nature, exploring the world or enjoying a cold pint with friends."
   bg_image: "/images/backgrounds/about-us-bg.png"
-  image: "/images/about/about.jpg"
-  image2: "/images/about/about2.jpg"
+  image: "/images/about/ben.jpg"
+  image2: "/images/about/about.jpg"
   button:
     enable: true
     label: "View Services"
