@@ -27,7 +27,7 @@ const homepageCollection = defineCollection({
           name: z.string(),
           icon: z.string(),
           content: z.string(),
-          link: z.string(),
+          link: z.string().optional(),
         }),
       ),
     }),
@@ -62,6 +62,7 @@ const homepageCollection = defineCollection({
 const projectsCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/projects" }),
   schema: z.object({
+    draft: z.boolean().optional(),
     subtitle: z.string().optional(),
     title: z.string(),
     meta_title: z.string().optional(),
@@ -162,8 +163,10 @@ const aboutCollection = defineCollection({
       subtitle: z.string(),
       title: z.string(),
       content: z.string(),
+      about_founder: z.string(),
       bg_image: z.string(),
       image: z.string(),
+      image2: z.string(),
       button: z.object({
         enable: z.boolean(),
         label: z.string(),
@@ -190,6 +193,16 @@ const serviceCollection = defineCollection({
         title: z.string(),
         file: z.string(),
         size: z.string(),
+      })
+      .optional(),
+    compliance: z
+      .object({
+        enable: z.boolean(),
+        license: z.string(),
+        title: z.string(),
+        name: z.string(),
+        phone: z.string(),
+        email: z.string(),
       })
       .optional(),
   }),

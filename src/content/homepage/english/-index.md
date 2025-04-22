@@ -6,7 +6,7 @@ hero_slider:
     # slider item
     - title: "Plan Build Finance"
       subtitle: "Design + Mortgages"
-      content: "We provide all of the necessary tools to complete your mortgage, design and construction projects. Our services are strategically aligned to leverage your most valuable assets providing structured wealth growth"
+      content: "We provide all of the necessary tools to complete your mortgage, design and construction projects. Our services are strategically aligned to leverage your most valuable assets providing structured wealth growth."
       bg_image: "/images/slider/banner-1.jpg"
       button:
         enable: true
@@ -34,19 +34,16 @@ banner_feature:
     - name: "Scheduling"
       content: "Material and contractor analysis, sequencing work activities, setting realistic timelines."
       icon: "FaCalendarCheck"
-      link: "/services/scheduling"
 
     # banner feature item loop
     - name: "Planning & Permitting"
       content: "Zoning & bylaw review, technical building permit review, turn-key permitting services."
       icon: "FaStamp"
-      link: "/services/planning-and-permitting"
 
     # banner feature item loop
     - name: "Budget and Cost Control"
       content: "Budgeting, contractor pricing, material pricing, contract review, cash flow analysis."
       icon: "FaMoneyCheckDollar"
-      link: "/services/budget-and-cost-control"
 
     # # banner feature item loop
     # - name: "Professional Quantity Surveyor"

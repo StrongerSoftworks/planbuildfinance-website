@@ -23,7 +23,8 @@
   },
 
   "params": {
-    "contact_form_action": "#",
+    "contact_form_action": "https://api.web3forms.com/submit",
+    "contact_form_key": "",
     "address": "",
     "phone": "519-280-2770",
     "email": "ben@planbuildfinance.com",
@@ -40,7 +41,7 @@
 
   "navigation_button": {
     "enable": true,
-    "label": "Get A Quote",
+    "label": "Start Your Mortgage or Design",
     "link": "/contact"
   },
 

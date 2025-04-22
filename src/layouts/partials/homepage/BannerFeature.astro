@@ -1,6 +1,7 @@
 ---
 import DynamicIcon from "@/helpers/DynamicIcon";
 import { markdownify } from "@/lib/utils/textConverter";
+import BannerFeatureInner from "./BannerFeatureInner.astro";
 
 const { bannerFeature } = Astro.props;
 ---
@@ -12,24 +13,13 @@ const { bannerFeature } = Astro.props;
         <div class="flex flex-row flex-wrap justify-center gap-2">
           {bannerFeature.feature_item.map(
             (item: { name: string; content: string; icon: string; link: string }) => (
-              <a class="basis-full xl:basis-1/4 md:basis-1/3 group" href={item.link} aria-label={item.name}>
-                <div class="bg-white py-12 px-4 text-center box-shadow transition hover:bg-secondary flex flex-col items-center duration-200">
-                  <div class="icon-bg mb-4 water-wave flex items-center justify-center">
-                    <DynamicIcon
-                      icon={item.icon}
-                      className="icon group-hover:text-white"
-                    />
-                  </div>
-                  <h4
-                    class="mb-4 group-hover:text-white font-semibold text-h5"
-                    set:html={markdownify(item.name ?? "")}
-                  />
-                  <p
-                    class="group-hover:text-white/80 text-balance"
-                    set:html={markdownify(item.content ?? "")}
-                  />
-                </div>
-              </a>
+              <>
+                {item.link ? (<a class="basis-full xl:basis-1/4 md:basis-1/3 group" href={item.link} aria-label={item.name}>
+                  <BannerFeatureInner item={item} />
+                </a>) : (<div class="basis-full xl:basis-1/4 md:basis-1/3 group">
+                  <BannerFeatureInner item={item} />
+                </div>)}
+              </>
             ),
           )}
         </div>

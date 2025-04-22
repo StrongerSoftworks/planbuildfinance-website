@@ -21,7 +21,7 @@ const lang = getLangFromUrl(Astro.url);
             >
               {/* about us image  */}
               <ImageMod
-                class="w-100 max-md:pb-20"
+                class="w-100 max-md:pb-20 mx-auto"
                 src={about.image}
                 alt="About Image"
                 format="webp"
@@ -37,15 +37,50 @@ const lang = getLangFromUrl(Astro.url);
                 set:html={markdownify(about.title)}
               />
               <p class="mb-5" set:html={markdownify(about.content)} />
-              {about.button.enable && (
-                <a
-                  class="btn btn-primary"
-                  href={slugSelector(about.button.link, lang)}
-                >
-                  <span>{about.button.label}</span>
-                </a>
-              )}
             </div>
+            {about.about_founder ? (
+              <>
+                <div
+                  class="md:col-5 bg-contain bg-no-repeat md:order-2"
+                  style={{
+                    backgroundImage: `url(${about.bg_image})`,
+                  }}
+                >
+                  {/* about us image  */}
+                  <ImageMod
+                    class="w-100 max-md:pb-20 mx-auto"
+                    src={about.image2}
+                    alt="About Image"
+                    format="webp"
+                    width={518}
+                    height={492}
+                  />
+                </div>
+                <div class="md:col-6 md:order-1">
+                  <h2 class="h1 mb-10 mt-4 text-balance">About Our Founder</h2>
+                  <p class="mb-5" set:html={markdownify(about.about_founder)} />
+                  {about.button.enable && (
+                    <a
+                      class="btn btn-primary"
+                      href={slugSelector(about.button.link, lang)}
+                    >
+                      <span>{about.button.label}</span>
+                    </a>
+                  )}
+                </div>
+              </>
+            ) : (
+              <div class="md:col-6 md:ms-auto">
+                {about.button.enable && (
+                  <a
+                    class="btn btn-primary"
+                    href={slugSelector(about.button.link, lang)}
+                  >
+                    <span>{about.button.label}</span>
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </section>

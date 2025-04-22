@@ -8,14 +8,14 @@ import { getTranslations, supportedLang } from "@/lib/utils/languageParser";
 import { markdownify } from "@/lib/utils/textConverter";
 import type { ContentEntryMap } from "astro:content";
 import { render } from "astro:content";
-const { contact_form_action } = config.params;
+const { contact_form_action, contact_form_key } = config.params;
 
 export async function getStaticPaths() {
   const paths = await Promise.all(
     supportedLang.map(async (lang) => {
       const projects = await getSinglePage(
         "projects",
-        lang as keyof ContentEntryMap,
+        lang as keyof ContentEntryMap
       );
 
       return projects.map((project) => ({
@@ -27,7 +27,7 @@ export async function getStaticPaths() {
           project,
         },
       }));
-    }),
+    })
   );
   return paths.flat();
 }
@@ -157,7 +157,14 @@ const {
           <!-- quick contact -->
           <div class="bg-white px-8 py-10 box-shadow mb-12 sticky top-28">
             <h5 class="mb-5">{quick_contact}</h5>
-            <form action={contact_form_action}>
+            <form action={contact_form_action} method="POST">
+              <input type="hidden" name="access_key" value={contact_form_key} />
+              <input
+                type="checkbox"
+                name="botcheck"
+                class="hidden"
+                style="display: none;"
+              />
               <input
                 type="text"
                 name="name"

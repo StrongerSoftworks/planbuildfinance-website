@@ -7,21 +7,10 @@
       "url": "/services",
       "hasChildren": true,
       "children": [
-        { "name": "All Services", "url": "/services" },
         { "name": "Mortgages", "url": "/services/mortgages" },
-        { "name": "Design", "url": "/services/design" },
-        { "name": "Scheduling", "url": "/services/scheduling" },
-        {
-          "name": "Planning & Permitting",
-          "url": "/services/planning-and-permitting"
-        },
-        {
-          "name": "Budget and Cost Control",
-          "url": "/services/budget-cost-control"
-        }
+        { "name": "Design", "url": "/services/design" }
       ]
     },
-    { "name": "Projects", "url": "/projects" },
     { "name": "Contact", "url": "/contact" }
   ],
   "footer": [

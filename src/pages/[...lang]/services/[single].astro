@@ -12,14 +12,14 @@ import { markdownify, titleify } from "@/lib/utils/textConverter";
 import PageHeader from "@/partials/PageHeader.astro";
 import { render, type ContentEntryMap } from "astro:content";
 import { FaDownload, FaRegFilePdf } from "react-icons/fa6";
-const { contact_form_action } = config.params;
+const { contact_form_action, contact_form_key } = config.params;
 
 export async function getStaticPaths() {
   const paths = await Promise.all(
     supportedLang.map(async (lang) => {
       const services = await getSinglePage(
         "services",
-        lang as keyof ContentEntryMap,
+        lang as keyof ContentEntryMap
       );
 
       return services.map((service) => ({
@@ -31,19 +31,19 @@ export async function getStaticPaths() {
           service,
         },
       }));
-    }),
+    })
   );
   return paths.flat();
 }
 
 const { service } = Astro.props;
 const { lang } = Astro.params;
-const { title, meta_title, description, image, pdf } = service.data;
+const { title, meta_title, description, image, pdf, compliance } = service.data;
 const { Content } = await render(service);
 const land = getLangFromUrl(Astro.url);
 const allServices = await getSinglePage(
   "services",
-  land as keyof ContentEntryMap,
+  land as keyof ContentEntryMap
 );
 
 const serviceSlugs = allServices.map((service) => {
@@ -127,7 +127,14 @@ const {
           <!-- quick contact -->
           <div class="bg-white px-8 py-10 box-shadow mb-12 sticky top-28">
             <h5 class="mb-5">{quick_contact}</h5>
-            <form action={contact_form_action}>
+            <form action={contact_form_action} method="POST">
+              <input type="hidden" name="access_key" value={contact_form_key} />
+              <input
+                type="checkbox"
+                name="botcheck"
+                class="hidden"
+                style="display: none;"
+              />
               <input
                 type="text"
                 name="name"
@@ -185,6 +192,18 @@ const {
           </div>
         </div>
       </div>
+      <!-- compliance -->
+      {
+        compliance && compliance.enable && (
+          <div class="lg:col-12 bg-white px-8 py-10 box-shadow">
+            <p class="mb-0" set:html={markdownify(compliance.license)} />
+            <p class="mb-0" set:html={markdownify(compliance.title)} />
+            <p class="mb-0" set:html={markdownify(compliance.name)} />
+            <p class="mb-0" set:html={markdownify(compliance.phone)} />
+            <p class="mb-0" set:html={markdownify(compliance.email)} />
+          </div>
+        )
+      }
     </div>
   </section>
 </Base>
