@@ -15,8 +15,6 @@
   ],
   "footer": [
     { "name": "About", "url": "/about" },
-    { "name": "Compliance", "url": "/compliance" },
-    { "name": "Services", "url": "/services" },
-    { "name": "Projects", "url": "/projects" }
+    { "name": "Services", "url": "/services" }
   ]
 }
