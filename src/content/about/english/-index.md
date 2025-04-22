@@ -47,5 +47,5 @@ about_section:
   button:
     enable: true
     label: "View Services"
-    link: "/services"
+    link: "/services/"
 ---

@@ -9,9 +9,9 @@ hero_slider:
       content: "We provide all of the necessary tools to complete your mortgage, design and construction projects. Our services are strategically aligned to leverage your most valuable assets providing structured wealth growth."
       bg_image: "/images/slider/banner-1.jpg"
       button:
-        enable: true
+        enable: false
         label: "more details"
-        link: "/about"
+        link: "/about/"
 
 ########### banner feature #####
 banner_feature:
@@ -22,13 +22,13 @@ banner_feature:
     - name: "Mortgages"
       content: "Mortgages, refinancing, debt consolidation, switches, home equity lines of credit, including residential and commercial lending."
       icon: "BsFillHouseHeartFill"
-      link: "/services/mortgages"
+      link: "/services/mortgages/"
 
     # banner feature item loop
     - name: "Design"
       content: "Decks, home remodels, conversions, open-concept, complete renovations, new builds, backyard homes, duplexes, tri-plexes and multi-family."
       icon: "MdDesignServices"
-      link: "/services/design"
+      link: "/services/design/"
 
     # banner feature item loop
     - name: "Scheduling"

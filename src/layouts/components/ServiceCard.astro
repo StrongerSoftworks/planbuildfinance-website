@@ -66,7 +66,7 @@ const { read_more } = await getTranslations(lang as keyof ContentEntryMap);
                     />
                   )}
                   <a
-                    href={slugSelector(`/${service.id}`, lang)}
+                    href={slugSelector(`/${service.id}/`, lang)}
                     class="btn btn-secondary btn-arrow"
                   >
                     {read_more}

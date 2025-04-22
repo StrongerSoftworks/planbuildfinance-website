@@ -101,9 +101,9 @@ export const slugSelector = (url: string, lang: string) => {
       constructedUrl += "/";
     }
   } else {
-    if (constructedUrl.endsWith("/") && constructedUrl !== "/") {
-      constructedUrl = constructedUrl.slice(0, -1);
-    }
+    // if (constructedUrl.endsWith("/") && constructedUrl !== "/") {
+    //   constructedUrl = constructedUrl.slice(0, -1);
+    // }
   }
 
   return constructedUrl;

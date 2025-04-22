@@ -42,7 +42,7 @@
   "navigation_button": {
     "enable": true,
     "label": "Start Your Mortgage or Design",
-    "link": "/contact"
+    "link": "/contact/"
   },
 
   "metadata": {
