@@ -1,4 +1,5 @@
 ---
+import ContactFormScript from "@/components/ContactFormScript.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import { getListPage } from "@/lib/contentParser.astro";
@@ -33,19 +34,7 @@ const {
   placeholder_subject,
   placeholder_message,
   placeholder_phone,
-  // Add translation keys for success/error messages if needed
-  form_submission_success, // Example: "Your message has been sent successfully!"
-  form_submission_error, // Example: "An error occurred. Please try again."
-  form_validation_error, // Example: "Please fill out all required fields."
 } = await getTranslations(lang as keyof ContentEntryMap);
-
-// Provide default messages if translations are missing
-const successMessage =
-  form_submission_success || "Your message has been sent successfully!";
-const errorMessage =
-  form_submission_error || "An error occurred. Please try again.";
-const validationMessage =
-  form_validation_error || "Please fill out all required fields.";
 ---
 
 <Base
@@ -192,122 +181,5 @@ const validationMessage =
   </section>
   <!-- /contact form and map -->
 
-  {/* Client-side script for form handling */}
-  <script
-    define:vars={{
-      successMessage,
-      errorMessage,
-      validationMessage,
-      sendingMessage: send_message,
-    }}
-  >
-    const form = document.getElementById("contact-form");
-    const statusDiv = document.getElementById("form-status");
-    const submitButton = document.getElementById("submit-button");
-    const originalButtonText = submitButton.textContent; // Store original button text
-
-    // Define which fields are required
-    const requiredFields = ["name", "mail", "phone", "subject", "message"]; // Use the 'name' attributes
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault(); // Prevent default browser submission
-
-      statusDiv.textContent = ""; // Clear previous status messages
-      statusDiv.className = "mt-4"; // Reset classes
-      submitButton.disabled = true; // Disable button during submission
-      submitButton.textContent = "Sending..."; // Provide visual feedback
-
-      const formData = new FormData(form);
-      let isValid = true;
-
-      // Basic Validation: Check if required fields are filled
-      requiredFields.forEach((fieldName) => {
-        const field = form.elements[fieldName];
-        const value = formData.get(fieldName)?.toString().trim();
-        if (!value) {
-          isValid = false;
-          // Optional: Add visual indication to the field
-          field?.classList.add("is-invalid"); // You might need to define .is-invalid style
-        } else {
-          field?.classList.remove("is-invalid");
-        }
-      });
-
-      if (!isValid) {
-        statusDiv.textContent = validationMessage; // Use translated message
-        statusDiv.classList.add("text-danger"); // Add error styling (assuming bootstrap-like class)
-        submitButton.disabled = false; // Re-enable button
-        submitButton.textContent = originalButtonText; // Restore button text
-        // Optional: Focus the first invalid field
-        const firstInvalid = form.querySelector(".is-invalid");
-        firstInvalid?.focus();
-        return; // Stop submission
-      }
-
-      // Remove validation error styles if form is now valid
-      requiredFields.forEach((fieldName) => {
-        form.elements[fieldName]?.classList.remove("is-invalid");
-      });
-
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-            // 'Accept' header might be needed depending on the endpoint (e.g., formspree, web3forms)
-            Accept: "application/json",
-          },
-        });
-
-        if (response.ok) {
-          // Check if status code is 2xx
-          statusDiv.textContent = successMessage; // Use translated message
-          statusDiv.classList.add("text-success"); // Add success styling
-          form.reset(); // Clear the form fields
-        } else {
-          // Try to get error message from response if possible (depends on the backend)
-          let errorData;
-          try {
-            errorData = await response.json();
-          } catch (e) {
-            // Ignore if response is not JSON
-          }
-          console.error(
-            "Form submission error:",
-            response.status,
-            response.statusText,
-            errorData
-          );
-          statusDiv.textContent = `${errorMessage} (Status: ${response.status})`; // Use translated message + status
-          statusDiv.classList.add("text-danger"); // Add error styling
-        }
-      } catch (error) {
-        console.error("Network error or fetch failed:", error);
-        statusDiv.textContent = errorMessage; // Use translated message for network errors
-        statusDiv.classList.add("text-danger"); // Add error styling
-      } finally {
-        // Re-enable the button regardless of success or error, unless it was successful (form reset)
-        if (!statusDiv.classList.contains("text-success")) {
-          submitButton.disabled = false;
-          submitButton.textContent = originalButtonText; // Restore button text
-        } else {
-          submitButton.textContent = "Sent!";
-        }
-      }
-    });
-
-    requiredFields.forEach((fieldName) => {
-      const field = form.elements[fieldName];
-      field?.addEventListener("input", () => {
-        if (field.classList.contains("is-invalid")) {
-          field.classList.remove("is-invalid");
-          // Optionally clear the main validation message when user starts fixing errors
-          if (statusDiv.textContent === validationMessage) {
-            statusDiv.textContent = "";
-            statusDiv.className = "mt-4";
-          }
-        }
-      });
-    });
-  </script>
+  <ContactFormScript />
 </Base>

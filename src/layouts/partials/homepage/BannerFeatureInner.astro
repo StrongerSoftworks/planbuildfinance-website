@@ -2,26 +2,38 @@
 import DynamicIcon from "@/helpers/DynamicIcon";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const { item } = Astro.props;
+const { item, focusFeature } = Astro.props;
 ---
 
 {
   (
-    <div class="bg-white py-12 px-4 text-center box-shadow transition hover:bg-secondary flex flex-col items-center duration-200">
-      <div class="icon-bg mb-4 water-wave flex items-center justify-center">
-        <DynamicIcon
-          icon={item.icon}
-          className="icon group-hover:text-white"
+    <div
+      class={`bg-white py-12 px-4 text-center box-shadow transition hover:bg-secondary flex flex-col items-center duration-200 h-full`}
+    >
+      {focusFeature ? (
+        <>
+          <div class="icon-bg mb-4 water-wave flex items-center justify-center">
+            <DynamicIcon
+              icon={item.icon}
+              className="icon group-hover:text-white"
+            />
+          </div>
+          <h4
+            class="mb-4 group-hover:text-white font-semibold text-h5"
+            set:html={markdownify(item.name ?? "")}
+          />
+        </>
+      ) : (
+        <h5
+          class="mb-4 group-hover:text-white font-semibold text-h6"
+          set:html={markdownify(item.name ?? "")}
         />
-      </div>
-      <h4
-        class="mb-4 group-hover:text-white font-semibold text-h5"
-        set:html={markdownify(item.name ?? "")}
-      />
+      )}
+
       <p
-        class="group-hover:text-white/80 text-balance"
+        class="group-hover:text-white/90 text-balance"
         set:html={markdownify(item.content ?? "")}
       />
     </div>
-  )              
+  )
 }

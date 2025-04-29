@@ -20,7 +20,7 @@ const { read_more } = await getTranslations(lang as keyof ContentEntryMap);
 ---
 
 <div class="container">
-  <div class="row g-4">
+  <div class="row justify-center g-4">
     {
       services?.map((service) => {
         const slugParts = service.id.split("/");

@@ -1,0 +1,92 @@
+---
+import config from "@/config/config.json";
+import { type ContentEntryMap } from "astro:content";
+import { getTranslations } from "@/lib/utils/languageParser";
+import ContactFormScript from "./ContactFormScript.astro";
+
+const { contact_form_action, contact_form_key } = config.params;
+const { lang } = Astro.params;
+const {
+  send_message,
+  placeholder_name,
+  placeholder_email,
+  placeholder_subject,
+  placeholder_message,
+  placeholder_phone,
+  quick_contact,
+  form_submission_success,
+  form_submission_error,
+  form_validation_error,
+} = await getTranslations(lang as keyof ContentEntryMap);
+
+// Provide default messages if translations are missing
+const successMessage =
+  form_submission_success || "Your message has been sent successfully!";
+const errorMessage =
+  form_submission_error || "An error occurred. Please try again.";
+const validationMessage =
+  form_validation_error || "Please fill out all required fields.";
+---
+
+<!-- quick contact -->
+<div class="bg-white px-8 py-10 box-shadow mb-12 sticky top-28">
+  <h5 class="mb-5">{quick_contact}</h5>
+  <form id="contact-form" action={contact_form_action} method="POST">
+    <input type="hidden" name="access_key" value={contact_form_key} />
+    <input
+      type="checkbox"
+      name="botcheck"
+      class="hidden"
+      style="display: none;"
+    />
+    <input
+      type="text"
+      name="name"
+      id="name"
+      class="form-control form-control-sm w-full border-0 rounded-0 box-shadow mb-3"
+      placeholder={placeholder_name}
+      required
+    />
+    <input
+      type="email"
+      name="mail"
+      id="mail"
+      class="form-control form-control-sm w-full border-0 rounded-0 box-shadow mb-3"
+      placeholder={placeholder_email}
+      required
+    />
+    <input
+      type="tel"
+      name="phone"
+      id="phone"
+      class="form-control form-control-sm w-full border-0 rounded-0 box-shadow mb-3"
+      placeholder={placeholder_phone}
+      required
+    />
+    <input
+      type="text"
+      name="subject"
+      id="subject"
+      class="form-control form-control-sm w-full border-0 rounded-0 box-shadow mb-3"
+      placeholder={placeholder_subject}
+      required
+    />
+    <textarea
+      name="message"
+      id="message"
+      class="form-control form-control-sm w-full border-0 rounded-0 box-shadow mb-3 py-3 px-4"
+      placeholder={placeholder_message}
+      required></textarea>
+    <button
+      type="submit"
+      value="send"
+      class="btn btn-primary"
+      id="submit-button"
+    >
+      {send_message}
+    </button>
+  </form>
+  <div id="form-status" class="mt-4" aria-live="polite"></div>
+</div>
+
+<ContactFormScript />

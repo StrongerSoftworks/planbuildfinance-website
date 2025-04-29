@@ -1,9 +1,19 @@
 ---
+import ImageMod from "@/components/ImageMod.astro";
+import config from "@/config/config.json";
 import { getLangFromUrl, slugSelector } from "@/lib/utils/languageParser";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const { heroSlider } = Astro.props;
 let lang = getLangFromUrl(Astro.url);
+
+const {
+  logo_width,
+  logo_height,
+}: {
+  logo_width: any;
+  logo_height: any;
+} = config.site;
 ---
 
 {
@@ -29,31 +39,41 @@ let lang = getLangFromUrl(Astro.url);
                   />
                   {/* <div class="absolute inset-0 bg-gradient-to-l from-[#00000040] to-[#00000050] z-10" /> */}
                   <div class="container 2xl:container-lg relative z-20 h-full flex flex-col justify-center items-start text-dark">
-                    <div class="bg-light/90 p-3">
+                    <div class="bg-light p-5 flex flex-col items-center box-shadow">
+                      <ImageMod
+                        src="/images/logo.png"
+                        class={`inline-block`}
+                        width={logo_width.replace("px", "") * 4}
+                        height={logo_height.replace("px", "") * 4}
+                        alt={slider.title}
+                        format="webp"
+                        loading={"eager"}
+                      />
                       <h1
-                      class="md:text-7xl uppercase font-semibold"
-                      set:html={markdownify(slider.title ?? "")}
-                    />
-                    <h2 class="mb-6 md:text-6xl uppercase font-semibold"
-                      set:html={markdownify(slider.subtitle ?? "")}/>
-                    <p
-                      class="mb-5 lg:mb-9 lg:text-lg xl:max-w-[700px] leading-7 text-balance font-light"
-                      set:html={markdownify(slider.content ?? "")}
-                    />
-                    {slider.button && slider.button.enable && (
-                      <a
-                        class="btn btn-outline-primary"
-                        href={slugSelector(slider.button.link, lang)}
-                      >
-                        <span>{slider.button.label}</span>
-                      </a>
-                    )}
+                        class="md:text-7xl uppercase font-semibold"
+                        set:html={markdownify(slider.title ?? "")}
+                      />
+                      <h2
+                        class="mb-6 md:text-5xl uppercase font-semibold"
+                        set:html={markdownify(slider.subtitle ?? "")}
+                      />
+                      <p
+                        class="mb-5 lg:mb-9 lg:text-lg xl:max-w-[700px] leading-7 font-light"
+                        set:html={markdownify(slider.content ?? "")}
+                      />
+                      {slider.button && slider.button.enable && (
+                        <a
+                          class="btn btn-outline-primary"
+                          href={slugSelector(slider.button.link, lang)}
+                        >
+                          <span>{slider.button.label}</span>
+                        </a>
+                      )}
                     </div>
-                    
                   </div>
                 </div>
               </div>
-            ),
+            )
           )}
         </div>
       </div>

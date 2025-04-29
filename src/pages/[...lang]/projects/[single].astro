@@ -1,5 +1,6 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
+import QuickContact from "@/components/QuickContact.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
@@ -154,55 +155,7 @@ const {
         </div>
 
         <div class="col-10 lg:col-4">
-          <!-- quick contact -->
-          <div class="bg-white px-8 py-10 box-shadow mb-12 sticky top-28">
-            <h5 class="mb-5">{quick_contact}</h5>
-            <form action={contact_form_action} method="POST">
-              <input type="hidden" name="access_key" value={contact_form_key} />
-              <input
-                type="checkbox"
-                name="botcheck"
-                class="hidden"
-                style="display: none;"
-              />
-              <input
-                type="text"
-                name="name"
-                id="name"
-                class="form-control form-control-sm w-full border-0 rounded-0 box-shadow mb-3"
-                placeholder={placeholder_name}
-              />
-              <input
-                type="email"
-                name="mail"
-                id="mail"
-                class="form-control form-control-sm w-full border-0 rounded-0 box-shadow mb-3"
-                placeholder={placeholder_email}
-              />
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                class="form-control form-control-sm w-full border-0 rounded-0 box-shadow mb-3"
-                placeholder={placeholder_phone}
-              />
-              <input
-                type="text"
-                name="subject"
-                id="subject"
-                class="form-control form-control-sm w-full border-0 rounded-0 box-shadow mb-3"
-                placeholder={placeholder_subject}
-              />
-              <textarea
-                name="message"
-                id="message"
-                class="form-control form-control-sm w-full border-0 rounded-0 box-shadow mb-3 py-3 px-4"
-                placeholder={placeholder_message}></textarea>
-              <button type="submit" value="send" class="btn btn-primary">
-                {send_message}
-              </button>
-            </form>
-          </div>
+          <QuickContact />
         </div>
       </div>
     </div>
