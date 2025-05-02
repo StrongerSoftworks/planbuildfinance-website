@@ -26,7 +26,7 @@ philosophy_section:
 about_section:
   enable: true
   subtitle: "About Us"
-  title: "Executive Statement"
+  title: "About Plan Build Finance Inc."
   content:
     "Plan Build Finance Inc. provides mortgage and design solutions catered to our clients specific needs across Ontario. We are licensed in both mortgages and small buildings making us exceptionally well qualified to elevate the value of our clients assets to their full potential. Our clients and industry partners form the cornerstone of our success and therefore we truly value our customers' business and our industry relations.
     <br /><br />
@@ -42,7 +42,7 @@ about_section:
     <br /><br />
     Ben takes a relaxed common-sense approach to all of his projects. When he isn’t focused mentally on how to construct and deconstruct a project he can usually be found on long walks with his partner Katie, hiking in nature, exploring the world or enjoying a cold pint with friends."
   bg_image: "/images/backgrounds/about-us-bg.png"
-  image: "/images/about/ben.jpg"
+  image: "/images/about/ben2.jpg"
   image2: "/images/about/about.jpg"
   button:
     enable: true
