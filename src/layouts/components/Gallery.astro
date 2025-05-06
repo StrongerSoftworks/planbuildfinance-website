@@ -1,0 +1,128 @@
+---
+import ImageMod from "./ImageMod.astro";
+
+const { images } = Astro.props;
+---
+
+<>
+  <div class="swiper banner-slider relative">
+    <div class="swiper-wrapper">
+      {
+        images.map((slider: { image: string; alt: string }) => (
+          <div class="swiper-slide relative">
+            <div class="row justify-center">
+              <ImageMod
+                src={slider.image}
+                class="mb-12 max-w-full max-h-[600px] w-auto h-auto"
+                width={800}
+                height={600}
+                alt={slider.alt}
+              />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <div class="swiper banner-slider-nav relative">
+    <div class="swiper-wrapper">
+      {
+        images.map((slider: { image: string; alt: string }) => (
+          <div class="swiper-slide relative">
+            <ImageMod
+              src={slider.image}
+              class="max-w-full max-h-[200px] w-auto h-auto"
+              width={400}
+              height={300}
+              alt={slider.alt}
+            />
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <div class="swiper-scrollbar"></div>
+  </div>
+</>
+
+<script>
+  import "swiper/css";
+  import "swiper/css/navigation";
+  import "swiper/css/thumbs";
+  import "swiper/css/pagination";
+  import "swiper/css/scrollbar";
+  import { Swiper } from "swiper";
+  import {
+    Autoplay,
+    Navigation,
+    Thumbs,
+    Pagination,
+    Scrollbar,
+    Controller,
+  } from "swiper/modules";
+
+  let galleryTop: Swiper | null = null;
+  let galleryThumbs: Swiper | null = null;
+
+  // astro:page-load event is fired when the page is loaded
+  document.addEventListener("astro:page-load", () => {
+    // Destroy previous instances if they exist (for client-side navigation)
+    if (galleryThumbs) {
+      galleryThumbs.destroy(true, true);
+    }
+    if (galleryTop) {
+      galleryTop.destroy(true, true);
+    }
+
+    galleryThumbs = new Swiper(".banner-slider-nav", {
+      spaceBetween: 10,
+      modules: [Scrollbar, Controller],
+      loop: false,
+      centeredSlides: true,
+      slidesPerView: 3,
+      freeMode: true,
+      watchSlidesProgress: true,
+      slideToClickedSlide: true,
+      scrollbar: {
+        el: ".banner-slider-nav .swiper-scrollbar",
+        draggable: true,
+      },
+      navigation: {
+        nextEl: ".banner-slider-nav .swiper-button-next",
+        prevEl: ".banner-slider-nav .swiper-button-prev",
+      },
+      controller: {
+        control: galleryTop,
+      },
+    });
+
+    galleryTop = new Swiper(".banner-slider", {
+      spaceBetween: 10,
+      modules: [Autoplay, Navigation, Thumbs, Pagination],
+      loop: false,
+      centeredSlides: true,
+      slidesPerView: 1,
+      touchRatio: 0.2,
+      slideToClickedSlide: true,
+      navigation: {
+        nextEl: ".banner-slider .swiper-button-next",
+        prevEl: ".banner-slider .swiper-button-prev",
+      },
+      thumbs: {
+        swiper: galleryThumbs,
+      },
+      pagination: {
+        el: ".banner-slider .swiper-pagination",
+        clickable: true,
+      },
+    });
+  });
+</script>

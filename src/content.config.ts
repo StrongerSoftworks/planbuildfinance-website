@@ -77,6 +77,14 @@ const projectsCollection = defineCollection({
       })
       .optional(),
     image: z.string().optional(),
+    slide_show: z
+      .array(
+        z.object({
+          image: z.string(),
+          alt: z.string(),
+        }),
+      )
+      .optional(),
     client: z.string().optional(),
     category: z.string().optional(),
     status: z.string().optional(),

@@ -11,6 +11,10 @@
         { "name": "Design", "url": "/services/design/" }
       ]
     },
+    {
+      "name": "Portfolio",
+      "url": "/projects/"
+    },
     { "name": "Contact", "url": "/contact/" }
   ],
   "footer": [

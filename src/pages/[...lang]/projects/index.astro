@@ -24,7 +24,7 @@ if (!lang) {
 
 const projectIndex = await getListPage(
   "projects",
-  lang as keyof ContentEntryMap,
+  lang as keyof ContentEntryMap
 );
 const projects = await getSinglePage("projects", lang as keyof ContentEntryMap);
 ---

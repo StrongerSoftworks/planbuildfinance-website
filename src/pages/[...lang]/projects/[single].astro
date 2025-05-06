@@ -1,15 +1,14 @@
 ---
+import Gallery from "@/components/Gallery.astro";
 import ImageMod from "@/components/ImageMod.astro";
 import QuickContact from "@/components/QuickContact.astro";
-import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
-import dateFormat from "@/lib/utils/dateFormat";
 import { getTranslations, supportedLang } from "@/lib/utils/languageParser";
 import { markdownify } from "@/lib/utils/textConverter";
+import PageHeader from "@/partials/PageHeader.astro";
 import type { ContentEntryMap } from "astro:content";
 import { render } from "astro:content";
-const { contact_form_action, contact_form_key } = config.params;
 
 export async function getStaticPaths() {
   const paths = await Promise.all(
@@ -36,32 +35,14 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 const { lang } = Astro.params;
 
-const {
-  title,
-  meta_title,
-  description,
-  image,
-  client,
-  category,
-  date,
-  status,
-} = project.data;
+const { title, meta_title, description, image, client, category, slide_show } =
+  project.data;
 
 const { Content } = await render(project);
 
-const {
-  quick_contact,
-  placeholder_name,
-  placeholder_email,
-  placeholder_message,
-  placeholder_subject,
-  placeholder_phone,
-  send_message,
-  client: Tclient,
-  category: Tcategory,
-  date: Tdate,
-  status: Tstatus,
-} = await getTranslations(lang as keyof ContentEntryMap);
+const { client: Tclient, category: Tcategory } = await getTranslations(
+  lang as keyof ContentEntryMap
+);
 ---
 
 <Base
@@ -70,6 +51,7 @@ const {
   description={description}
   image={image}
 >
+  {!image && <PageHeader {...project.data} />}
   <section class="section">
     <div class="container">
       <div class="row justify-center">
@@ -86,68 +68,15 @@ const {
             )
           }
 
+          {
+            slide_show && (
+              <section class="section pt-0">
+                <Gallery images={slide_show} />
+              </section>
+            )
+          }
+
           <div>
-            <div class="bg-secondary p-8">
-              <div class="row">
-                <div class="md:col-3 col-6 mb-4 md:mb-0">
-                  <div class="md:border-r border-border/20 ml-4">
-                    <h5 class="text-white text-uppercase mb-2 h6">{Tclient}</h5>
-                    {
-                      client && (
-                        <span
-                          class="text-light/80"
-                          set:html={markdownify(client)}
-                        />
-                      )
-                    }
-                  </div>
-                </div>
-
-                <div class="md:col-3 col-6 mb-4 md:mb-0">
-                  <div class="md:border-r border-border/20 ml-4">
-                    <h5 class="text-white text-uppercase mb-2 h6">
-                      {Tcategory}
-                    </h5>
-                    {
-                      category && (
-                        <span
-                          class="text-light/80"
-                          set:html={markdownify(category)}
-                        />
-                      )
-                    }
-                  </div>
-                </div>
-
-                <div class="md:col-3 col-6 mb-4 md:mb-0">
-                  <div class="md:border-r border-border/20 ml-4">
-                    <h5 class="text-white text-uppercase mb-2 h6">{Tdate}</h5>
-                    {
-                      date && (
-                        <span
-                          class="text-light/80"
-                          set:html={dateFormat(date)}
-                        />
-                      )
-                    }
-                  </div>
-                </div>
-
-                <div class="md:col-3 col-6 mb-4 md:mb-0">
-                  <div class="ml-4">
-                    <h5 class="text-white text-uppercase mb-2 h6">{Tstatus}</h5>
-                    {
-                      status && (
-                        <span
-                          class="text-light/80"
-                          set:html={markdownify(status)}
-                        />
-                      )
-                    }
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="content mt-12">
               <Content />
             </div>
@@ -155,6 +84,42 @@ const {
         </div>
 
         <div class="col-10 lg:col-4">
+          <div class="bg-secondary p-8">
+            <div class="row">
+              {
+                client && (
+                  <div class="col-6 mb-4 md:mb-0">
+                    <div class="md:border-r border-border/20 ml-4">
+                      <h5 class="text-white text-uppercase mb-2 h6">
+                        {Tclient}
+                      </h5>
+
+                      <span
+                        class="text-light/80"
+                        set:html={markdownify(client)}
+                      />
+                    </div>
+                  </div>
+                )
+              }
+
+              <div class="col-6 mb-4 md:mb-0">
+                <div class="ml-4">
+                  <h5 class="text-white text-uppercase mb-2 h6">
+                    {Tcategory}
+                  </h5>
+                  {
+                    category && (
+                      <span
+                        class="text-light/80"
+                        set:html={markdownify(category)}
+                      />
+                    )
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
           <QuickContact />
         </div>
       </div>
