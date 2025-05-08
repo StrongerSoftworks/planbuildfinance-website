@@ -1,10 +1,10 @@
 ---
-subtitle: "Case Studies"
-title: "Case Study"
+subtitle: "Our Projects"
+title: "Portfolio"
 description: "this is meta description"
-meta_title: "Case Study"
+meta_title: "Portfolio"
 bg_image: "images/backgrounds/page-title.jpg"
-draft: true
+draft: false
 button:
   enable: true
   label: "more projects"

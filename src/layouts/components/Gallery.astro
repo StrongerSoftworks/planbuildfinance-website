@@ -13,7 +13,7 @@ const { images } = Astro.props;
             <div class="row justify-center">
               <ImageMod
                 src={slider.image}
-                class="mb-12 max-w-full max-h-[600px] w-auto h-auto"
+                class="mb-12 max-w-full max-h-[200px] sm:max-h-[300px] md:max-h-[400px] xl:max-h-[600px] w-auto h-auto"
                 width={800}
                 height={600}
                 alt={slider.alt}
@@ -30,13 +30,13 @@ const { images } = Astro.props;
     <div class="swiper-button-next"></div>
   </div>
   <div class="swiper banner-slider-nav relative">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper pb-4">
       {
         images.map((slider: { image: string; alt: string }) => (
           <div class="swiper-slide relative">
             <ImageMod
               src={slider.image}
-              class="max-w-full max-h-[200px] w-auto h-auto"
+              class="max-w-full max-h-[60px] sm:max-h-[100px] md:max-h-[200px] w-auto h-auto"
               width={400}
               height={300}
               alt={slider.alt}
