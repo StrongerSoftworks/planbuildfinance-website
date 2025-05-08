@@ -1,6 +1,6 @@
 ---
 title: "Accessory Dwelling Unit With Deck"
-description: "Construction of a 700sf, single storey, detached home in the backyard of the main house."
+description: "Accessory dwelling unit built in London, ON. Construction of a 700sf, single storey, detached home in the backyard of the main house."
 category: "Design"
 slide_show:
   - image: "/images/project/oliver/front.jpg"

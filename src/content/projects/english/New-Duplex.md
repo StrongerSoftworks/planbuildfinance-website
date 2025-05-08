@@ -1,5 +1,5 @@
 ---
-title: "New Duplex"
+title: "New Duplex in Backyard"
 description: "Construction of a 700sf, single storey, detached home in the backyard of the main house."
 category: "Design"
 slide_show:

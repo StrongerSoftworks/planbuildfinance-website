@@ -1,6 +1,6 @@
 ---
 title: "Accessory Dwelling Unit"
-description: "Construction of a 700sf, single storey, accessory dwelling unit in the rear yard of an existing house."
+description: "Accessory dwelling unit built in Sarnia, ON. Construction of a 700sf, single storey, accessory dwelling unit in the rear yard of an existing house."
 category: "Design"
 slide_show:
   - image: "/images/project/queen/front.jpg"
