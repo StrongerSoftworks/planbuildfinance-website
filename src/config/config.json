@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Plan Build Finance Inc.",
-    "base_url": "https://www.planbuildfinance.com",
+    "base_url": "https://planbuildfinance.com",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
