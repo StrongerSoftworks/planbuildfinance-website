@@ -1,6 +1,6 @@
 ---
 title: "New Duplex in Backyard"
-description: "Construction of a 700sf, single storey, detached home in the backyard of the main house."
+description: "Construction of a single storey, 2,200sf duplex house with two independent units and a total of five bedrooms."
 category: "Design"
 slide_show:
   - image: "/images/project/vidal/front-unit.jpg"
