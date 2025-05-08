@@ -1,6 +1,6 @@
 ---
 title: "About Us"
-meta_title: "About"
+meta_title: "About Plan Build Finance Inc."
 description: "Plan Build Finance Inc. provides mortgage and design solutions catered to our clients specific needs across Ontario."
 image: ""
 draft: false
