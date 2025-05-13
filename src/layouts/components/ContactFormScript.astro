@@ -46,6 +46,20 @@ const validationMessage =
     submitButton.textContent = "Sending..."; // Provide visual feedback
 
     const formData = new FormData(form);
+
+    // include current route in form submission
+    formData.append("route", window.location.pathname);
+    if (formData.get("mortgage") == "on") {
+      formData.append("mortgage", "yes");
+    } else {
+      formData.append("mortgage", "no");
+    }
+    if (formData.get("design") == "on") {
+      formData.append("design", "yes");
+    } else {
+      formData.append("design", "no");
+    }
+
     let isValid = true;
 
     // Basic Validation: Check if required fields are filled

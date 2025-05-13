@@ -1,0 +1,14 @@
+---
+const { name, id, labelText, checked } = Astro.props;
+---
+
+<div>
+  <input
+    type="checkbox"
+    name={name}
+    id={id}
+    class="w-6 h-6 shrink-0 border-3 border-primary rounded-none box-shadow hover:cursor-pointer focus:outline-none checked:border-0 checked:bg-primary checked:text-white"
+    checked={checked}
+  />
+  <label class="hover:cursor-pointer" for={name}>{labelText}</label>
+</div>

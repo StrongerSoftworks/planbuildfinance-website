@@ -3,9 +3,13 @@ import config from "@/config/config.json";
 import { type ContentEntryMap } from "astro:content";
 import { getTranslations } from "@/lib/utils/languageParser";
 import ContactFormScript from "./ContactFormScript.astro";
+import Checkbox from "./Checkbox.astro";
 
 const { contact_form_action, contact_form_key } = config.params;
 const { lang } = Astro.params;
+const { mortgageChecked, designChecked } = Astro.props;
+console.log(mortgageChecked, designChecked);
+
 const {
   send_message,
   placeholder_name,
@@ -77,6 +81,21 @@ const validationMessage =
       class="form-control form-control-sm w-full border-0 rounded-0 box-shadow mb-3 py-3 px-4"
       placeholder={placeholder_message}
       required></textarea>
+    <div class="col-12 flex flex-row flex-wrap gap-x-5 gap-y-2 p-1 mb-5">
+      <span class="w-full">I am interested in:</span>
+      <Checkbox
+        id="mortgage"
+        name="mortgage"
+        labelText="Mortgage"
+        checked={mortgageChecked}
+      />
+      <Checkbox
+        id="design"
+        name="design"
+        labelText="Design"
+        checked={designChecked}
+      />
+    </div>
     <button
       type="submit"
       value="send"

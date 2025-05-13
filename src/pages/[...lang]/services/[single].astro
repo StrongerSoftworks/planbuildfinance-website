@@ -125,7 +125,10 @@ const {
               </div>
             )
           }
-          <QuickContact />
+          <QuickContact
+            mortgageChecked={service.id.includes("mortgage")}
+            designChecked={service.id.includes("design")}
+          />
         </aside>
 
         <div class="lg:col-8 order-1 lg:order-2">

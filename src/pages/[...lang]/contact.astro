@@ -1,4 +1,5 @@
 ---
+import Checkbox from "@/components/Checkbox.astro";
 import ContactFormScript from "@/components/ContactFormScript.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
@@ -92,7 +93,6 @@ const {
   <section class="section">
     <div class="container">
       <div class="row justify-center g-5">
-
         <div class="col-10 sm:col-8 md:col-7">
           <h2 class="section-title">{contact_form}</h2>
           <form
@@ -155,6 +155,13 @@ const {
                 class="form-control border-0 rounded-none box-shadow mb-12 py-3 px-4"
                 placeholder={placeholder_message}
                 required></textarea>
+            </div>
+            <div
+              class="col-12 flex flex-row flex-wrap gap-x-5 gap-y-2 p-1 mb-5"
+            >
+              <span class="w-full">I am interested in:</span>
+              <Checkbox id="mortgage" name="mortgage" labelText="Mortgage" />
+              <Checkbox id="design" name="design" labelText="Design" />
             </div>
             <div class="col-12">
               <button
