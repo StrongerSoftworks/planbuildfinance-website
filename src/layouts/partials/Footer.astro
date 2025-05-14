@@ -1,4 +1,5 @@
 ---
+import ImageMod from "@/components/ImageMod.astro";
 import Logo from "@/components/Logo.astro";
 import Social from "@/components/Social.astro";
 import config from "@/config/config.json";
@@ -30,57 +31,78 @@ const {
 
 <footer>
   <!-- main footer -->
-  <div class="section bg-secondary">
+  <div class="section bg-secondary text-white">
     <div class="container">
-      <!-- <div class="row justify-between items-baseline">
-        <div class="col-12 flex justify-center items-center">
+      <div class="row justify-between items-baseline mb-6">
+        <div class="col-12 md:col-6 lg:col-4 mb-6">
           <ImageMod
-          src="/images/logo-alt.png"
-          class={`inline-block`}
-          width={480 * 2}
-          height={260 * 2}
-          alt={"Plan Build Finance Inc. Logo"}
-          style={{
-            height: 260 + "px",
-            width: 480 + "px",
-          }}
-          format="webp"
-          loading={"eager"}
-        />
+            src="/images/footer/pbf logo inverted.png"
+            class={`h-32 w-auto mx-auto`}
+            width={240 * 2}
+            height={130 * 2}
+            alt={"Plan Build Finance Inc. Logo"}
+            format="webp"
+            loading={"lazy"}
+          />
         </div>
-      </div> -->
-      <div class="row justify-between items-baseline">
-
-        <div class="col-12 md:col-6 xl:col-3 mb-5 md:mb-0">
-          <!-- <Logo src="/images/logo.png" /> -->
-          <!-- <p
-            class="text-light/75 mb-5"
-            set:html={markdownify(footer_content)}
-          /> -->
-          <!-- social links -->
-          <h4 class="text-white mb-6 text-h5 font-semibold">
-            {follow_us_on}
-          </h4>
-          <Social source={social.main} className="social-icon-alt" />
+        <div class="col-12 md:col-6 lg:col-4 mb-6">
+          <ImageMod
+            src="/images/footer/CCA.png"
+            class={`h-32 w-auto mx-auto`}
+            width={240 * 2}
+            height={130 * 2}
+            alt={"Canadian Construction Association Logo"}
+            format="webp"
+            loading={"lazy"}
+          />
         </div>
-
-        <!-- licenses -->
-        <div class="col-12 md:col-6 xl:col-3">
-          <h4 class="text-white mb-4 text-h5 font-semibold">
-            Certifications and Licenses 
-          </h4>
-          <ul>
-            <li class="text-light/75 mb-3">Mortgage Agent Level 1 | License M25000323</li>
-            <li class="text-light/75 mb-3">B.C.I.N. License #39688</li>
-            <li class="text-light/75 mb-3">Professional Quantity Surveyor</li>
-            <li class="text-light/75 mb-3">Member of the Canadian Institute of Quantity Surveyors</li>
-            <li class="text-light/75 mb-3">Gold Seal Certified with the Canadian Construction Association</li>
-            <li class="text-light/75 mb-3"></li>
-          </ul>
+        <div class="col-12 md:col-6 lg:col-4 mb-6">
+          <ImageMod
+            src="/images/footer/CIQS.png"
+            class={`h-32 w-auto mx-auto`}
+            width={240 * 2}
+            height={130 * 2}
+            alt={"Canadian Institute of Quantity Surveyors Logo"}
+            format="webp"
+            loading={"lazy"}
+          />
+        </div>
+      </div>
+      <div class="row justify-between mb-6">
+        <div class="col-12 md:col-6 mb-6">
+          <ImageMod
+            src="/images/footer/Indi.png"
+            class={`h-32 w-auto mx-auto mb-5`}
+            width={240 * 2}
+            height={130 * 2}
+            alt={"Indi Mortgage Logo"}
+            format="webp"
+            loading={"lazy"}
+          />
+          <p class="mb-3">
+            <strong>indi Mortgage Head Office<br /></strong>
+            <span class="text-light/75"
+              ><a
+                target="_blank"
+                href={`https://www.google.com/maps?q=${encodeURIComponent("223 14 Street NW, Calgary, AB T2N 1Z6")}`}
+                set:html="223 14 Street NW, Calgary, AB T2N 1Z6"
+              /> / 800.517.8670 / info@indimortgage.ca</span
+            >
+          </p>
+          <p class="mb-3">
+            <strong>Compliance Officer<br /></strong><span class="text-light/75"
+              >Gordon Appel / 403.714.4663 / gord.appel@indimortgage.ca</span
+            >
+          </p>
+          <p class="mb-3">
+            <strong>Broker of Record</strong><br /><span class="text-light/75"
+              >Gordon Ross / 800.517.8670 ext 301 / gord.ross@indimotgage.ca</span
+            >
+          </p>
         </div>
 
         <!-- service list -->
-        <div class="col-12 md:col-6 xl:col-3 mt-5">
+        <!-- <div class="col-12 md:col-6 xl:col-3 mt-5">
           <h4 class="text-white mb-4 text-h5 font-semibold">{about_us}</h4>
           <ul class="list-styled">
             {
@@ -95,13 +117,14 @@ const {
               ))
             }
           </ul>
-        </div>
+        </div> -->
 
         <!-- contact info -->
-        <div class="col-12 md:col-6 xl:col-3 mt-5">
+        <div class="col-12 md:col-6">
           <h4 class="text-white mb-4 text-h5 font-semibold">
             {contact_info}
           </h4>
+          <Social source={social.main} className="social-icon-alt" />
           <ul>
             <li class="text-light/75 mb-3">
               <a
@@ -116,30 +139,12 @@ const {
             <li class="text-light/75 mb-3">
               <a href={`mailto:${email}`} set:html={markdownify(email)} />
             </li>
+            <!-- licenses -->
+
+            <li class="mb-3">Mortgage Agent Level 1 | License M25000323</li>
+            <li class="">Small Buildings Designer | B.C.I.N. #39688</li>
           </ul>
         </div>
-
-        <!-- Indi Mortgage info -->
-        <!-- <div class="col-12 md:col-6 xl:col-3 mt-5">
-            <h4 class="text-white mb-4 text-h5 font-semibold">
-              Home Office
-            </h4>
-            <ul>
-              <li class="text-light/75 mb-3">
-                <a
-                  target="_blank"
-                  href={`https://www.google.com/maps?q=${encodeURIComponent("223 14 Street NW, Calgary, AB T2N 1Z6")}`}
-                  set:html="223 14 Street NW, Calgary, AB T2N 1Z6"
-                />
-              </li>
-              <li class="text-light/75 mb-3">
-                <a href={`tel:800.517.8670`} set:html="800.517.8670" />
-              </li>
-              <li class="text-light/75 mb-3">
-                <a href={`mailto:info@indimortgage.ca`} set:html="info@indimortgage.ca" />
-              </li>
-            </ul>
-          </div> -->
 
         <!-- newsletter -->
         <!-- <div class="col-12">
@@ -161,7 +166,6 @@ const {
               </div>
             </form>
           </div> -->
-
       </div>
     </div>
   </div>
@@ -170,7 +174,7 @@ const {
   <div class="bg-[#1F2630] py-4">
     <div class="container">
       <div class="row">
-        <div class="md:col-6 text-center md:text-start mb-3 md:mb-0">
+        <div class="md:col-6 text-center md:text-start mb-3 md:mb-0 w-full">
           <p class="mb-0 text-light text-sm" set:html={markdownify(copyright)}>
             <span class="text-primary" set:html={config.site.logo_text} />
             <span id="currentYear" class="mr-1"></span>
@@ -182,6 +186,16 @@ const {
                   CurrentYear.toString();
               });
             </script>
+          </p>
+        </div>
+
+        <div class="md:col-6 text-center md:text-start mb-3 md:mb-0 w-full">
+          <p class="mb-0 ms-auto text-light text-sm md:text-right">
+            Site by<a
+              class={`inline-block px-3 text-light hover:text-primary duration-200`}
+              href="https://www.strongersoftworks.ca"
+              >StrongerSoftworks
+            </a>
           </p>
         </div>
 
@@ -199,7 +213,7 @@ const {
                         {menu.name}
                       </a>
                     </li>
-                  ),
+                  )
                 )}
               </ul>
             </div>

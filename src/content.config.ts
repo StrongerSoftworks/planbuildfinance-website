@@ -28,6 +28,13 @@ const homepageCollection = defineCollection({
           icon: z.string(),
           content: z.string(),
           link: z.string().optional(),
+          sub_items: z.array(
+            z.object({
+              name: z.string(),
+              icon: z.string(),
+              content: z.string(),
+            }),
+          ),
         }),
       ),
     }),

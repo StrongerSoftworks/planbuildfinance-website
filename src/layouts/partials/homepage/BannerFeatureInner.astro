@@ -19,13 +19,13 @@ const { item, focusFeature } = Astro.props;
             />
           </div>
           <h4
-            class="mb-4 group-hover:text-white font-semibold text-h5"
+            class="mb-4 group-hover:text-white font-semibold text-h4"
             set:html={markdownify(item.name ?? "")}
           />
         </>
       ) : (
-        <h5
-          class="mb-4 group-hover:text-white font-semibold text-h6"
+        <h4
+          class="mb-4 group-hover:text-white font-semibold text-h4"
           set:html={markdownify(item.name ?? "")}
         />
       )}
@@ -34,6 +34,23 @@ const { item, focusFeature } = Astro.props;
         class="group-hover:text-white/90 text-balance"
         set:html={markdownify(item.content ?? "")}
       />
+      <div class="row mt-12 px-4">
+        {item.sub_items.map(
+          (item: { name: string; content: string; icon: string }) => (
+            <div class="col-12 group mb-4 flex flex-col items-center">
+              <h5
+                class="group-hover:text-white text-h6"
+                set:html={markdownify(item.name ?? "")}
+              />
+
+              <p
+                class="group-hover:text-white"
+                set:html={markdownify(item.content ?? "")}
+              />
+            </div>
+          )
+        )}
+      </div>
     </div>
   )
 }

@@ -1,14 +1,14 @@
 ---
-title: "Mortgage Broker in Ontario"
+title: "Mortgages"
 description: "We provide a full service mortgage and financing package suitable for new home buyers, existing home owners and investors across Canada."
 bg_image: "images/backgrounds/page-title.jpg"
 image: "/images/service/service-2.jpg"
 icon: BsFillHouseHeartFill
 pdf:
   enable: false
-  title: "Download Brochure"
+  title: "Mortgage Application Consent Form"
   file: "#"
-  size: "1.5mb"
+  size: "0.03mb"
 compliance:
   enable: true
   license: "Mortgage License #M25000323"

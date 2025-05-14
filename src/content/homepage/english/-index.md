@@ -7,7 +7,7 @@ hero_slider:
     - title: "Plan Build Finance"
       subtitle: "Design + Mortgages"
       content: "We provide all of the necessary tools to complete your mortgage, design and construction projects. Our services are strategically aligned to leverage your most valuable assets providing structured wealth growth."
-      bg_image: "/images/slider/banner-1.jpg"
+      bg_image: "/images/slider/bailey-alexander-waqb5i0NrX8-unsplash.jpg"
       button:
         enable: false
         label: "more details"
@@ -23,42 +23,32 @@ banner_feature:
       content: "Mortgages, refinancing, debt consolidation, switches, home equity lines of credit, including residential and commercial lending."
       icon: "BsFillHouseHeartFill"
       link: "/services/mortgages/"
+      sub_items:
+        - name: "Investor Mortgages"
+          content: ""
+          icon: "FaCalendarCheck"
+        - name: "First Time Home Buyers"
+          content: ""
+          icon: "FaStamp"
+        - name: "Refinances"
+          content: ""
+          icon: "FaMoneyCheckDollar"
 
     # banner feature item loop
     - name: "Design"
       content: "Decks, home remodels, conversions, open-concept, complete renovations, new builds, backyard homes, duplexes, tri-plexes and multi-family."
       icon: "MdDesignServices"
       link: "/services/design/"
-
-    # banner feature item loop
-    - name: "Scheduling"
-      content: "Material and contractor analysis, sequencing work activities, setting realistic timelines."
-      icon: "FaCalendarCheck"
-
-    # banner feature item loop
-    - name: "Planning & Permitting"
-      content: "Zoning & bylaw review, technical building permit review, turn-key permitting services."
-      icon: "FaStamp"
-
-    # banner feature item loop
-    - name: "Budget and Cost Control"
-      content: "Budgeting, contractor pricing, material pricing, contract review, cash flow analysis."
-      icon: "FaMoneyCheckDollar"
-
-    # # banner feature item loop
-    # - name: "Professional Quantity Surveyor"
-    #   icon: "PiSealFill"
-    #   content: "Member of the Canadian Institute of Quantity Surveyors."
-
-    # # banner feature item loop
-    # - name: "Gold Seal Certified"
-    #   icon: "PiSealFill"
-    #   content: "Gold Seal Certified with the Canadian Construction Association."
-
-    # # banner feature item loop
-    # - name: "Licensed and Insured"
-    #   icon: "PiSealFill"
-    #   content: "Licensed and insured to provide design and mortgage services across Ontario"
+      sub_items:
+        - name: "Scheduling"
+          content: "Material and contractor analysis, sequencing work activities, setting realistic timelines."
+          icon: "FaCalendarCheck"
+        - name: "Planning & Permitting"
+          content: "Zoning & bylaw review, technical building permit review, turn-key permitting services."
+          icon: "FaStamp"
+        - name: "Budget and Cost Control"
+          content: "Budgeting, contractor pricing, material pricing, contract review, cash flow analysis."
+          icon: "FaMoneyCheckDollar"
 
 ######### funfacts ########
 funfacts:

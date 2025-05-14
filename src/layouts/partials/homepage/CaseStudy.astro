@@ -11,12 +11,12 @@ const lang = getLangFromUrl(Astro.url);
   {
     !projectIndex?.data.draft && (
       <section class="section pt-0">
-        <div class="pb-4 bg-gray-white">
+        <div class="pb-4 pt-36 bg-gray-white">
           <div class="container">
             <div class="flex justify-between items-center">
               <div class="section-title mb-0">
                 <span class="section-title-border" />
-                <p set:html={markdownify(projectIndex?.data?.subtitle)} />
+                {/* <p set:html={markdownify(projectIndex?.data?.subtitle)} /> */}
                 <h2
                   class="!ml-0"
                   set:html={markdownify(projectIndex?.data?.title)}
@@ -36,11 +36,12 @@ const lang = getLangFromUrl(Astro.url);
             </div>
           </div>
         </div>
-
-        <ProjectCard
-          projectIndex={projectIndex[0]}
-          projects={projects.slice(0, 4)}
-        />
+        <div class="container mt-10">
+          <ProjectCard
+            projectIndex={projectIndex[0]}
+            projects={projects.slice(0, 4)}
+          />
+        </div>
       </section>
     )
   }

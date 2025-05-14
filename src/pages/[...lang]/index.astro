@@ -64,9 +64,9 @@ const callToAction = await getSinglePage(
       button: { enable: true, label: "Read More", link: "/about/" },
     }}
   />
+  <ServiceSection serviceIndex={serviceIndex[0]} services={services} />
   <FunFacts funfacts={funfacts} />
   <Feature feature={feature} />
-  <ServiceSection serviceIndex={serviceIndex[0]} services={services} />
   <Team
     teamIndex={teamIndex[0]}
     team={team.slice(0, 3)}
