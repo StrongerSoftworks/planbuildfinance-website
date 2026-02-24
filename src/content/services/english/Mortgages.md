@@ -13,9 +13,9 @@ compliance:
   enable: true
   license: "Mortgage License #M25000323"
   title: "Broker of Record"
-  name: "Gord Ross"
-  phone: "800-517-8670 ext 301"
-  email: "gord@indimortgage.ca"
+  name: "Gerald Krahn, AMP"
+  phone: "1-888-604-3068"
+  email: "gerald@mortgagegroup.com "
 ---
 
 Did you know there’s no fees associated with using a mortgage broker such as Plan Build Finance Inc.? We are compensated by the lender directly and still provide the best interest rates available on the ever changing market. Combined with a high level of knowledge and personalized service a Mortgage Broker has been a choice of Canadians for many years.
